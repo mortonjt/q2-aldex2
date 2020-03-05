@@ -68,6 +68,7 @@ def aldex2(table: pd.DataFrame,
 	#it in R because of row.names = 1
 
         summary.index.name = "featureid"
+        summary.rename(index=str, inplace=True)
         return summary
 
 def extract_differences(table: pd.DataFrame, sig_threshold: float = 0.1, effect_threshold: float = 1, difference_threshold: float = 1, test: str = 'welch') -> pd.DataFrame:
